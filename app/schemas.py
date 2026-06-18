@@ -1,6 +1,9 @@
 from pydantic import BaseModel, EmailStr, ConfigDict
 from typing import Optional, Literal
 
+class UserOutModel(BaseModel):
+    id: int
+    email: EmailStr
 
 class PostModel(BaseModel):
     title: str
@@ -29,11 +32,6 @@ class PostResponseModel(PostModel):
 class UserModel(BaseModel):
     email: EmailStr
     password: str
-
-
-class UserOutModel(BaseModel):
-    id: int
-    email: EmailStr
 
 
 class UserResponseModel(BaseModel):
